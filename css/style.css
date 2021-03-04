@@ -1,0 +1,72 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+  font-size: 62.5%;
+}
+body {
+  font-size: 2.5rem;
+  background: lightgray;
+}
+span, a{
+  display: block;
+  text-decoration: none;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+form{
+  display: flex;
+  width: 700px;
+  flex-flow: column nowrap;
+}
+form input{
+  width: 200px;
+  margin-left: 30px;
+}
+table{
+  text-align: center;
+}
+table .fairyRow{
+  display: none;
+}
+table td{
+  width: 150px;
+  height: 25px;
+  border: 1px solid black;
+}
+.danger{
+  color: red;
+}
+.ez{
+  color: green;
+}
+.neutral{
+  color: black;
+}
+.immune{
+  color: purple;
+}

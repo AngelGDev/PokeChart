@@ -325,6 +325,8 @@ let types = []
               let dragon = dragonEl.map(el => Number(el.innerText))
               let darkEl = Array.from(document.querySelectorAll('.pokimons.dark'))
               let dark = darkEl.map(el => Number(el.innerText))
+              let fairyEl = Array.from(document.querySelectorAll('.pokimons.fairy'))
+              let fairy = fairyEl.map(el =>Number(el.innerText))
           
               document.querySelector('.normal.resists').innerText = normal.reduce((acc, val) => val < 1 && val != '' ? acc + 1 : acc = acc , 0)
               document.querySelector('.normal.weaknesses').innerText = normal.reduce((acc, val) => val >= 2 ? acc + 1 : acc = acc , 0)
@@ -360,6 +362,10 @@ let types = []
               document.querySelector('.dragon.weaknesses').innerText = dragon.reduce((acc, val) => val >= 2 ? acc + 1 : acc = acc , 0)
               document.querySelector('.dark.resists').innerText = dark.reduce((acc, val) => val < 1 && val != '' ? acc + 1 : acc = acc , 0)
               document.querySelector('.dark.weaknesses').innerText = dark.reduce((acc, val) => val >= 2 ? acc + 1 : acc = acc , 0)
+              document.querySelector('.fairy.resists').innerText = fairy.reduce((acc, val) => val >= 2 ? acc + 1 : acc = acc , 0)
+              document.querySelector('.fairy.weaknesses').innerText = fairy.reduce((acc, val) => val >= 2 ? acc + 1 : acc = acc , 0)
+
+                  
 
               weaknesses.forEach(el => {
                 if(el.innerText > 2){
@@ -369,11 +375,11 @@ let types = []
                 }else if(el.innerText > 0){
                   el.classList.add('caution')
                   el.classList.remove('danger')
-                  el.classList.remove('ez')
+                  el.classList.remove('neutral')
                 }else if(el.innerText == 0){
                   el.classList.add('neutral')
+                  el.classList.remove('caution')
                   el.classList.remove('danger')
-                  el.classList.remove('ez')
                 }
               })
               
@@ -393,7 +399,7 @@ let types = []
                 }
               })
               
-              let tableTypes = [normalEl, fightingEl, flyingEl, poisonEl, groundEl, bugEl, rockEl, ghostEl, steelEl, fireEl, waterEl, grassEl, electricEl, psychicEl, iceEl, dragonEl, darkEl]
+              let tableTypes = [normalEl, fightingEl, flyingEl, poisonEl, groundEl, bugEl, rockEl, ghostEl, steelEl, fireEl, waterEl, grassEl, electricEl, psychicEl, iceEl, dragonEl, darkEl, fairyEl]
               
               
               for(let i = 0; i < tableTypes.length; i++){

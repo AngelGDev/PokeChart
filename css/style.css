@@ -117,21 +117,22 @@ img{
 }
 
 
-@media only screen and (min-device-width: 360px) and (max-device-width: 640px) {
+@media only screen and (max-width: 600px) {
 
-  form{
+  body form{
     flex-flow: column wrap;
-    height: 150px;
+    height: 180px;
   }
   form label{
     font-size: 1.8rem;
   }
   form div{
-    width: 50%;
     margin-top: 2px;
+    width: 50%;
   }
   form input{
     font-size: 1.5rem;
+    width: 100%;
   }
   table{
     font-size: 1.5rem;

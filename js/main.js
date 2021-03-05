@@ -404,37 +404,30 @@ let types = []
               
               for(let i = 0; i < tableTypes.length; i++){
                 tableTypes[i].forEach(element => {
-                  if(element.innerText == 0){
-                    element.classList.add('immune')
-                    element.classList.remove('ez')
-                    element.classList.remove('neutral')
-                    element.classList.remove('caution')
-                    element.classList.remove('danger')
-                  }else if(element.innerText < 1){
-                    element.classList.add('ez')
-                    element.classList.remove('immune')
-                    element.classList.remove('neutral')
-                    element.classList.remove('caution')
-                    element.classList.remove('danger')
-                  }else if(element.innerText == 2){
-                    element.classList.add('caution')
-                    element.classList.remove('ez')
-                    element.classList.remove('immune')
-                    element.classList.remove('nautral')
-                    element.classList.remove('danger')
-                  }
-                  else if(element.innerText > 2){
+                  if(element.innerText > 2){
                     element.classList.add('danger')
                     element.classList.remove('ez')
                     element.classList.remove('neutral')
                     element.classList.remove('caution')
                     element.classList.remove('immune')
-                  }else{
+                  }else if(element.innerText > 1){
+                    element.classList.add('caution')
+                    element.classList.remove('ez')
+                    element.classList.remove('immune')
+                    element.classList.remove('nautral')
+                    element.classList.remove('danger')
+                  }else if(element.innerText == 1){
                     element.classList.add('neutral')
                     element.classList.remove('ez')
                     element.classList.remove('danger')
                     element.classList.remove('caution')
                     element.classList.remove('immune')
+                  }else{
+                    element.classList.add('ez')
+                    element.classList.remove('immune')
+                    element.classList.remove('neutral')
+                    element.classList.remove('caution')
+                    element.classList.remove('danger')
                   }
                 })
               }

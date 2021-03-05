@@ -24,8 +24,14 @@ html{
   font-size: 62.5%;
 }
 body {
-  font-size: 2.5rem;
-  background: lightgray;
+  font-size: 2rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  background: rgb(85, 83, 83);
+  margin-top: 10px;
+  font-weight: bolder;
+  color:whitesmoke;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
 }
 span, a{
   display: block;
@@ -40,33 +46,115 @@ span, a{
 /*******************************************/
 form{
   display: flex;
-  width: 700px;
-  flex-flow: column nowrap;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+}
+form div{
+  padding: 0 10px;
+}
+form label{
+  font-size: 2.5rem;
+  padding-left: 25px;
 }
 form input{
-  width: 200px;
-  margin-left: 30px;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
 }
 table{
   text-align: center;
+  font-weight: bold;
+  width: 80%; 
+  margin: auto;
+  margin-top: 20px;
 }
 table .fairyRow{
   display: none;
 }
 table td{
   width: 150px;
-  height: 25px;
+  height: 21px;
   border: 1px solid black;
 }
+span{
+  margin: auto;
+  width: 30px;
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color:whitesmoke;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
 .danger{
-  color: red;
+  background: red;
+}
+.caution{
+  background: orange;
 }
 .ez{
-  color: green;
+  background: green;
 }
 .neutral{
-  color: black;
+  background: gray;
 }
 .immune{
-  color: purple;
+  background: black;
+}
+.coupleResists{
+  background: green;
+}
+.lotResists{
+  background: blue;
+}
+p{
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+img{
+  width: 80px;
+}
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 640px) {
+
+  form{
+    flex-flow: column wrap;
+    height: 150px;
+  }
+  form label{
+    font-size: 1.8rem;
+  }
+  form div{
+    width: 50%;
+    margin-top: 2px;
+  }
+  form input{
+    font-size: 1.5rem;
+  }
+  table{
+    font-size: 1.5rem;
+  }
+  table td{
+    padding-top: 4px;
+  }
+  img{
+    width: 40px;
+    height: 40px;
+  }
+  .names{
+    font-size: 1rem;
+  }
+  .typing{
+    font-size: 1.2rem;
+  }
+  .attackTypes{
+    font-size: 1.2rem;
+  }
+  p{
+    margin-left: 20px;
+  }
+  
+
 }

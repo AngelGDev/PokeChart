@@ -10,6 +10,8 @@
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"> 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -45,8 +47,18 @@
 
 		<section class="chart">
 			<table>
-				<thead>Mechanic</thead>
 				<tbody>
+					<tr>
+						<td></td>
+						<td class="names" id="firstName"></td>
+						<td class="names" id="secondName"></td>
+						<td class="names" id="thirdName"></td>
+						<td class="names" id="fourthName"></td>
+						<td class="names" id="fifthName"></td>
+						<td class="names" id="sixthName"></td>
+						<td class="names" id="totalLose"></td>
+						<td class="names" id="totalWin"></td>
+					</tr>
 					<tr>
 						<td></td>
 						<td class="sprites" id="firstSprite"></td>
@@ -66,232 +78,211 @@
 						<td class="typing" id="fourthType"></td>
 						<td class="typing" id="fifthType"></td>
 						<td class="typing" id="sixthType"></td>
-						<td></td>
-						<td></td>
+						<td>weak #</td>
+						<td>resist #</td>
 					</tr>
 					<tr>
-						<td>Attacking</td>
-						<td id="firstName"></td>
-						<td id="secondName"></td>
-						<td id="thirdName"></td>
-						<td id="fourthName"></td>
-						<td id="fifthName"></td>
-						<td id="sixthName"></td>
-						<td id="totalLose">Total weaknesses</td>
-						<td id="totalWin">Total resists</td>
+						<td class="attackTypes">normal</td>
+						<td><span class="firstPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken normal pokimons"></span></td>
+						<td><span class="weaknesses normal"></span></td>
+						<td><span class="resists normal"></span></td>
 					</tr>
 					<tr>
-						<td>Attack type</td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td class="attackTypes">fight</td>
+						<td><span class="firstPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken fighting pokimons"></span></td>
+						<td><span class="weaknesses fighting"></span></td>
+						<td><span class="resists fighting"></span></td>						
 					</tr>
 					<tr>
-						<td>normal</td>
-						<td class="firstPokeDmgTaken normal pokimons"></td>
-						<td class="secondPokeDmgTaken normal pokimons"></td>
-						<td class="thirdPokeDmgTaken normal pokimons"></td>
-						<td class="fourthPokeDmgTaken normal pokimons"></td>
-						<td class="fifthPokeDmgTaken normal pokimons"></td>
-						<td class="sixthPokeDmgTaken normal pokimons"></td>
-						<td class="weaknesses normal"></td>
-						<td class="resists normal"></td>
+						<td class="attackTypes">fly</td>
+						<td><span class="firstPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken flying pokimons"></span></td>
+						<td><span class="weaknesses flying"></span></td>
+						<td><span class="resists flying"></span></td>
 					</tr>
 					<tr>
-						<td>fight</td>
-						<td class="firstPokeDmgTaken fighting pokimons"></td>
-						<td class="secondPokeDmgTaken fighting pokimons"></td>
-						<td class="thirdPokeDmgTaken fighting pokimons"></td>
-						<td class="fourthPokeDmgTaken fighting pokimons"></td>
-						<td class="fifthPokeDmgTaken fighting pokimons"></td>
-						<td class="sixthPokeDmgTaken fighting pokimons"></td>
-						<td class="weaknesses fighting"></td>
-						<td class="resists fighting"></td>						
+						<td class="attackTypes">poison</td>
+						<td><span class="firstPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken poison pokimons"></span></td>
+						<td><span class="weaknesses poison"></span></td>
+						<td><span class="resists poison"></span></td>
 					</tr>
 					<tr>
-						<td>fly</td>
-						<td class="firstPokeDmgTaken flying pokimons"></td>
-						<td class="secondPokeDmgTaken flying pokimons"></td>
-						<td class="thirdPokeDmgTaken flying pokimons"></td>
-						<td class="fourthPokeDmgTaken flying pokimons"></td>
-						<td class="fifthPokeDmgTaken flying" pokimons></td>
-						<td class="sixthPokeDmgTaken flying pokimons"></td>
-						<td class="weaknesses flying"></td>
-						<td class="resists flying"></td>
+						<td class="attackTypes">ground</td>
+						<td><span class="firstPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken ground pokimons"></span></td>
+						<td><span class="weaknesses ground"></span></td>
+						<td><span class="resists ground"></span></td>
 					</tr>
 					<tr>
-						<td>poison</td>
-						<td class="firstPokeDmgTaken poison pokimons"></td>
-						<td class="secondPokeDmgTaken poison pokimons"></td>
-						<td class="thirdPokeDmgTaken poison pokimons"></td>
-						<td class="fourthPokeDmgTaken poison pokimons"></td>
-						<td class="fifthPokeDmgTaken poison pokimons"></td>
-						<td class="sixthPokeDmgTaken poison pokimons"></td>
-						<td class="weaknesses poison"></td>
-						<td class="resists poison"></td>
+						<td class="attackTypes">rock</td>
+						<td><span class="firstPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken rock pokimons"></span></td>
+						<td><span class="weaknesses rock"></span></td>
+						<td><span class="resists rock"></span></td>
 					</tr>
 					<tr>
-						<td>ground</td>
-						<td class="firstPokeDmgTaken ground pokimons"></td>
-						<td class="secondPokeDmgTaken ground pokimons"></td>
-						<td class="thirdPokeDmgTaken ground pokimons"></td>
-						<td class="fourthPokeDmgTaken ground pokimons"></td>
-						<td class="fifthPokeDmgTaken ground pokimons"></td>
-						<td class="sixthPokeDmgTaken ground pokimons"></td>
-						<td class="weaknesses ground"></td>
-						<td class="resists ground"></td>
+						<td class="attackTypes">bug</td>
+						<td><span class="firstPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken bug pokimons"></span></td>
+						<td><span class="weaknesses bug"></span></td>
+						<td><span class="resists bug"></span></td>
 					</tr>
 					<tr>
-						<td>rock</td>
-						<td class="firstPokeDmgTaken rock pokimons"></td>
-						<td class="secondPokeDmgTaken rock pokimons"></td>
-						<td class="thirdPokeDmgTaken rock pokimons"></td>
-						<td class="fourthPokeDmgTaken rock pokimons"></td>
-						<td class="fifthPokeDmgTaken rock pokimons"></td>
-						<td class="sixthPokeDmgTaken rock pokimons"></td>
-						<td class="weaknesses rock"></td>
-						<td class="resists rock"></td>
+						<td class="attackTypes">ghost</td>
+						<td><span class="firstPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken ghost pokimons"></span></td>
+						<td><span class="weaknesses ghost"></span></td>
+						<td><span class="resists ghost"></span></td>
 					</tr>
 					<tr>
-						<td>bug</td>
-						<td class="firstPokeDmgTaken bug pokimons"></td>
-						<td class="secondPokeDmgTaken bug pokimons"></td>
-						<td class="thirdPokeDmgTaken bug pokimons"></td>
-						<td class="fourthPokeDmgTaken bug pokimons"></td>
-						<td class="fifthPokeDmgTaken bug pokimons"></td>
-						<td class="sixthPokeDmgTaken bug pokimons"></td>
-						<td class="weaknesses bug"></td>
-						<td class="resists bug"></td>
+						<td class="attackTypes">steel</td>
+						<td><span class="firstPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken steel pokimons"></span></td>
+						<td><span class="weaknesses steel"></span></td>
+						<td><span class="resists steel"></span></td>
 					</tr>
 					<tr>
-						<td>ghost</td>
-						<td class="firstPokeDmgTaken ghost pokimons"></td>
-						<td class="secondPokeDmgTaken ghost pokimons"></td>
-						<td class="thirdPokeDmgTaken ghost pokimons"></td>
-						<td class="fourthPokeDmgTaken ghost pokimons"></td>
-						<td class="fifthPokeDmgTaken ghost pokimons"></td>
-						<td class="sixthPokeDmgTaken ghost pokimons"></td>
-						<td class="weaknesses ghost"></td>
-						<td class="resists ghost"></td>
+						<td class="attackTypes">fire</td>
+						<td><span class="firstPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken fire pokimons"></span></td>
+						<td><span class="weaknesses fire"></span></td>
+						<td><span class="resists fire"></span></td>
 					</tr>
 					<tr>
-						<td>steel</td>
-						<td class="firstPokeDmgTaken steel pokimons"></td>
-						<td class="secondPokeDmgTaken steel pokimons"></td>
-						<td class="thirdPokeDmgTaken steel pokimons"></td>
-						<td class="fourthPokeDmgTaken steel pokimons"></td>
-						<td class="fifthPokeDmgTaken steel pokimons"></td>
-						<td class="sixthPokeDmgTaken steel pokimons"></td>
-						<td class="weaknesses steel"></td>
-						<td class="resists steel"></td>
+						<td class="attackTypes">water</td>
+						<td><span class="firstPokeDmgTaken water pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken water pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken water pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken water pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken water pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken water pokimons"></span></td>
+						<td><span class="weaknesses water"></span></td>
+						<td><span class="resists water"></span></td>
 					</tr>
 					<tr>
-						<td>fire</td>
-						<td class="firstPokeDmgTaken fire pokimons"></td>
-						<td class="secondPokeDmgTaken fire pokimons"></td>
-						<td class="thirdPokeDmgTaken fire pokimons"></td>
-						<td class="fourthPokeDmgTaken fire pokimons"></td>
-						<td class="fifthPokeDmgTaken fire pokimons"></td>
-						<td class="sixthPokeDmgTaken fire pokimons"></td>
-						<td class="weaknesses fire"></td>
-						<td class="resists fire"></td>
+						<td class="attackTypes">grass</td>
+						<td><span class="firstPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken grass pokimons"></span></td>
+						<td><span class="weaknesses grass"></span></td>
+						<td><span class="resists grass"></span></td>
 					</tr>
 					<tr>
-						<td>water</td>
-						<td class="firstPokeDmgTaken water pokimons"></td>
-						<td class="secondPokeDmgTaken water pokimons"></td>
-						<td class="thirdPokeDmgTaken water pokimons"></td>
-						<td class="fourthPokeDmgTaken water pokimons"></td>
-						<td class="fifthPokeDmgTaken water pokimons"></td>
-						<td class="sixthPokeDmgTaken water pokimons"></td>
-						<td class="weaknesses water"></td>
-						<td class="resists water"></td>
+						<td class="attackTypes">elec</td>
+						<td><span class="firstPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken electric pokimons"></span></td>
+						<td><span class="weaknesses electric"></span></td>
+						<td><span class="resists electric"></span></td>
 					</tr>
 					<tr>
-						<td>grass</td>
-						<td class="firstPokeDmgTaken grass pokimons"></td>
-						<td class="secondPokeDmgTaken grass pokimons"></td>
-						<td class="thirdPokeDmgTaken grass pokimons"></td>
-						<td class="fourthPokeDmgTaken grass pokimons"></td>
-						<td class="fifthPokeDmgTaken grass pokimons"></td>
-						<td class="sixthPokeDmgTaken grass pokimons"></td>
-						<td class="weaknesses grass"></td>
-						<td class="resists grass"></td>
+						<td class="attackTypes">psych</td>
+						<td><span class="firstPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken psychic pokimons"></span></td>
+						<td><span class="weaknesses psychic"></span></td>
+						<td><span class="resists psychic"></span></td>
 					</tr>
 					<tr>
-						<td>elec</td>
-						<td class="firstPokeDmgTaken electric pokimons"></td>
-						<td class="secondPokeDmgTaken electric pokimons"></td>
-						<td class="thirdPokeDmgTaken electric pokimons"></td>
-						<td class="fourthPokeDmgTaken electric pokimons"></td>
-						<td class="fifthPokeDmgTaken electric pokimons"></td>
-						<td class="sixthPokeDmgTaken electric pokimons"></td>
-						<td class="weaknesses electric"></td>
-						<td class="resists electric"></td>
+						<td class="attackTypes">ice</td>
+						<td><span class="firstPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken ice pokimons"></span></td>
+						<td><span class="weaknesses ice"></span></td>
+						<td><span class="resists ice"></span></td>
 					</tr>
 					<tr>
-						<td>psych</td>
-						<td class="firstPokeDmgTaken psychic pokimons"></td>
-						<td class="secondPokeDmgTaken psychic pokimons"></td>
-						<td class="thirdPokeDmgTaken psychic pokimons"></td>
-						<td class="fourthPokeDmgTaken psychic pokimons"></td>
-						<td class="fifthPokeDmgTaken psychic pokimons"></td>
-						<td class="sixthPokeDmgTaken psychic pokimons"></td>
-						<td class="weaknesses psychic"></td>
-						<td class="resists psychic"></td>
+						<td class="attackTypes">dragon</td>
+						<td><span class="firstPokeDmgTaken dragon pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken dragon pokimons"></span></><spantd>
+						<td><span class="thirdPokeDmgTaken dragon pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken dragon pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken dragon pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken dragon pokimons"></span></td>
+						<td><span class="weaknesses dragon"></span></td>
+						<td><span class="resists dragon"></span></td>
 					</tr>
 					<tr>
-						<td>ice</td>
-						<td class="firstPokeDmgTaken ice pokimons"></td>
-						<td class="secondPokeDmgTaken ice pokimons"></td>
-						<td class="thirdPokeDmgTaken ice pokimons"></td>
-						<td class="fourthPokeDmgTaken ice pokimons"></td>
-						<td class="fifthPokeDmgTaken ice pokimons"></td>
-						<td class="sixthPokeDmgTaken ice pokimons"></td>
-						<td class="weaknesses ice"></td>
-						<td class="resists ice"></td>
-					</tr>
-					<tr>
-						<td>dragon</td>
-						<td class="firstPokeDmgTaken dragon pokimons"></td>
-						<td class="secondPokeDmgTaken dragon pokimons"></td>
-						<td class="thirdPokeDmgTaken dragon pokimons"></td>
-						<td class="fourthPokeDmgTaken dragon pokimons"></td>
-						<td class="fifthPokeDmgTaken dragon pokimons"></td>
-						<td class="sixthPokeDmgTaken dragon pokimons"></td>
-						<td class="weaknesses dragon"></td>
-						<td class="resists dragon"></td>
-					</tr>
-					<tr>
-						<td>dark</td>
-						<td class="firstPokeDmgTaken dark pokimons"></td>
-						<td class="secondPokeDmgTaken dark pokimons"></td>
-						<td class="thirdPokeDmgTaken dark pokimons"></td>
-						<td class="fourthPokeDmgTaken dark pokimons"></td>
-						<td class="fifthPokeDmgTaken dark pokimons"></td>
-						<td class="sixthPokeDmgTaken dark pokimons"></td>
-						<td class="weaknesses dark"></td>
-						<td class="resists dark"></td>
+						<td class="attackTypes">dark</td>
+						<td><span class="firstPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken dark pokimons"></span></td>
+						<td><span class="weaknesses dark"></span></td>
+						<td><span class="resists dark"></span></td>
 					</tr>
 					<tr class="fairyRow">
-						<td>fairy</td>
-						<td class="firstPokeDmgTaken fairy pokimons"></td>
-						<td class="secondPokeDmgTaken fairy pokimons"></td>
-						<td class="thirdPokeDmgTaken fairy pokimons"></td>
-						<td class="fourthPokeDmgTaken fairy pokimons"></td>
-						<td class="fifthPokeDmgTaken fairy pokimons"></td>
-						<td class="sixthPokeDmgTaken fairy pokimons"></td>
-						<td class="weaknesses fairy"></td>
-						<td class="resists fairy"></td>
+						<td class="attackTypes">fairy</td>
+						<td><span class="firstPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="secondPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="thirdPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="fourthPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="fifthPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="sixthPokeDmgTaken fairy pokimons"></span></td>
+						<td><span class="weaknesses fairy"></span></td>
+						<td><span class="resists fairy"></span></td>
 					</tr>
 				</tbody>
 			</table>
 		</section>
+		<p>* Between Generations V and VI Ghost and Dark were made 1× against Steel instead of ½×.</p>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

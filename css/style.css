@@ -125,6 +125,7 @@ img{
   }
   form label{
     font-size: 1.8rem;
+    padding-left: 10px;
   }
   form div{
     margin-top: 2px;

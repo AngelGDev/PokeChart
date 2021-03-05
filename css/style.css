@@ -115,7 +115,15 @@ p{
 img{
   width: 80px;
 }
-
+ul{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  list-style: disc;
+}
+li{
+  margin-left: 20px;
+}
 
 @media only screen and (max-width: 600px) {
 

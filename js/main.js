@@ -422,6 +422,12 @@ let types = []
                     element.classList.remove('danger')
                     element.classList.remove('caution')
                     element.classList.remove('immune')
+                  }else if(element.innerText == 0){
+                    element.classList.add('immune')
+                    element.classList.remove('ez')
+                    element.classList.remove('neutral')
+                    element.classList.remove('caution')
+                    element.classList.remove('danger')
                   }else{
                     element.classList.add('ez')
                     element.classList.remove('immune')
